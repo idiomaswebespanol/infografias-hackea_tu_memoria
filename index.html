@@ -1,1 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Aprende Idiomas con Repetición Espaciada</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+            color: #212529;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #FF4E50, #FC913A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .kpi-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            text-align: center;
+            border-left: 5px solid #FF4E50;
+        }
+        .flow-step {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            text-align: center;
+            flex-grow: 1;
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            color: #FC913A;
+            align-self: center;
+            margin: 0 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <!-- Cabecera de la página -->
+        <header class="relative overflow-hidden pt-20 pb-20">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-[#EFEFEF]"></div>
+            </div>
+            <div class="container mx-auto px-6 md:px-8 relative z-10 text-center">
+                <div class="mb-8">
+                    <a href="#" class="text-3xl font-black text-[#5D6D7E]">@idiomaswebespanol</a>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-black text-[#2C3E50] leading-tight mb-4">
+                    Domina el Español y Francés. <br>Conviértete en Bilingüe.
+                </h1>
+                <p class="text-lg md:text-xl font-medium max-w-3xl mx-auto mb-8">
+                    Soy especialista en ayudar a alcanzar la fluidez con programas personalizados.
+                    me especializo en Francés para extranjeros. Español para extranjeros.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#contact" class="bg-[#A9A9A9] text-white font-bold py-4 px-12 rounded-full text-lg shadow-xl hover:bg-[#999999] transition-colors duration-300">
+                        Agenda tu consulta gratuita
+                    </a>
+                    <a href="https://youtube.com/@idiomasweb?si=SL8B6F1z6SYkl-HP" target="_blank" class="bg-[#E74C3C] text-white font-bold py-4 px-12 rounded-full text-lg shadow-xl hover:bg-[#C0392B] transition-colors duration-300">
+                        <span class="text-2xl">&#x25B6;&#xfe0e;</span>
+                        YouTube
+                    </a>
+                </div>
+                <!-- Enlaces de contacto y redes sociales -->
+                <div class="mt-8 flex justify-center flex-wrap gap-6 text-xl">
+                    <a href="mailto:idiomaswebinfo@gmail.com" class="text-[#5D6D7E] hover:text-[#A9A9A9] transition-colors duration-300 flex items-center gap-2">
+                        <span class="text-2xl">&#x2709;&#xfe0e;</span>
+                        <span>idiomaswebinfo@gmail.com</span>
+                    </a>
+                    <a href="https://instagram.com/idiomaswebespanol" target="_blank" class="text-[#5D6D7E] hover:text-[#A9A9A9] transition-colors duration-300 flex items-center gap-2">
+                        <span class="text-2xl">&#x1F4F8;</span>
+                        <span>@idiomaswebespanol</span>
+                    </a>
+                    <a href="https://wa.me/553299092071" target="_blank" class="text-[#5D6D7E] hover:text-[#A9A9A9] transition-colors duration-300 flex items-center gap-2">
+                        <span class="text-2xl">&#x1F4F1;</span>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-6xl font-black mb-2"><span class="gradient-text">Hackea Tu Memoria</span></h1>
+                <p class="text-xl md:text-2xl font-semibold text-gray-700">Aprende cualquier idioma más rápido con la ciencia de la Repetición Espaciada.</p>
+            </div>
+
+            <section id="problem" class="mb-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">El Enemigo #1: La Curva del Olvido</h2>
+                        <p class="text-gray-600 mb-4">
+                            ¿Alguna vez has estudiado una lista de vocabulario solo para olvidarla casi por completo a los pocos días? No estás solo. Es un fenómeno natural descrito por el psicólogo Hermann Ebbinghaus. Nuestro cerebro está diseñado para olvidar información que no considera crucial. Sin repasos estratégicos, la mayor parte de lo que aprendes se desvanece rápidamente.
+                        </p>
+                        <p class="text-gray-600">
+                            La repetición espaciada combate directamente esta curva, recordándote la información justo cuando estás a punto de olvidarla. Cada repaso fortalece la memoria, haciendo que el olvido sea mucho más lento.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="chart-container">
+                            <canvas id="forgettingCurveChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-gray-500 mt-2">La retención de memoria disminuye drásticamente sin repasos, pero se fortalece con cada sesión de repetición espaciada.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="solution" class="mb-16">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-2 text-gray-800">La Solución: El Ciclo de la Repetición Espaciada (SRS)</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">En lugar de estudiar sin parar, el SRS optimiza tu tiempo. Es un ciclo simple pero poderoso que se adapta a tu cerebro.</p>
+                </div>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 p-6 bg-white rounded-lg shadow-lg">
+                    <div class="flow-step">
+                        <div class="text-3xl mb-2" style="color: #FC913A;">①</div>
+                        <h3 class="font-bold text-lg">Aprende</h3>
+                        <p class="text-sm text-gray-600">Introduce una nueva palabra o concepto (ej. una flashcard).</p>
+                    </div>
+                    <div class="flow-arrow hidden md:block">→</div>
+                    <div class="flow-arrow block md:hidden">↓</div>
+                    <div class="flow-step">
+                        <div class="text-3xl mb-2" style="color: #FC913A;">②</div>
+                        <h3 class="font-bold text-lg">Recupera</h3>
+                        <p class="text-sm text-gray-600">El sistema te pregunta por la información días o semanas después.</p>
+                    </div>
+                    <div class="flow-arrow hidden md:block">→</div>
+                    <div class="flow-arrow block md:hidden">↓</div>
+                    <div class="flow-step">
+                        <div class="text-3xl mb-2" style="color: #FC913A;">③</div>
+                        <h3 class="font-bold text-lg">Califica</h3>
+                        <p class="text-sm text-gray-600">Evalúas qué tan fácil fue recordarlo. ¿Fácil? ¿Difícil? ¿Imposible?</p>
+                    </div>
+                    <div class="flow-arrow hidden md:block">→</div>
+                    <div class="flow-arrow block md:hidden">↓</div>
+                    <div class="flow-step">
+                        <div class="text-3xl mb-2" style="color: #FC913A;">④</div>
+                        <h3 class="font-bold text-lg">Repite</h3>
+                        <p class="text-sm text-gray-600">El algoritmo calcula el momento óptimo para el próximo repaso.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tools" class="mb-16">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-2 text-gray-800">Herramientas del Oficio: Elige tu App de SRS</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">Existen varias herramientas excelentes. La elección depende de tus necesidades: potencia, facilidad de uso o integración.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        <h3 class="text-2xl font-bold mb-3 text-center" style="color: #FF4E50;">Anki</h3>
+                        <p class="text-gray-600 mb-4">El estándar de oro para estudiantes serios. Es de código abierto, inmensamente personalizable y tiene una comunidad masiva que comparte mazos de flashcards para casi cualquier idioma.</p>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li><span class="font-bold text-green-600">✓</span> Ideal para personalización total.</li>
+                            <li><span class="font-bold text-green-600">✓</span> Miles de mazos pre-hechos.</li>
+                            <li><span class="font-bold text-red-600">✗</span> Curva de aprendizaje moderada.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        <h3 class="text-2xl font-bold mb-3 text-center" style="color: #FC913A;">SuperMemo</h3>
+                        <p class="text-gray-600 mb-4">El pionero y el más potente algorítmicamente. Sus algoritmos (SM-18) son teóricamente más eficientes, reduciendo la carga de repasos a largo plazo. Ideal para aprendices de por vida.</p>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li><span class="font-bold text-green-600">✓</span> Algoritmo más avanzado y eficiente.</li>
+                            <li><span class="font-bold text-green-600">✓</span> Incluye "lectura incremental".</li>
+                            <li><span class="font-bold text-red-600">✗</span> Curva de aprendizaje muy pronunciada.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                        <h3 class="text-2xl font-bold mb-3 text-center" style="color: #F9D423;">Duolingo & Co.</h3>
+                        <p class="text-gray-600 mb-4">Apps como Duolingo, Babbel o Memrise integran SRS de forma invisible. Son perfectas para principiantes o para un aprendizaje más casual y guiado.</p>
+                         <ul class="text-sm text-gray-700 space-y-2">
+                            <li><span class="font-bold text-green-600">✓</span> Extremadamente fácil de usar.</li>
+                            <li><span class="font-bold text-green-600">✓</span> Contenido ya creado y estructurado.</li>
+                            <li><span class="font-bold text-red-600">✗</span> Menos control y personalización.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-12 bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-4 text-center text-gray-800">Eficiencia del Algoritmo: ¿Por qué importa?</h3>
+                    <p class="text-center text-gray-600 mb-4 max-w-2xl mx-auto">Un algoritmo más avanzado como el de SuperMemo puede reducir significativamente la cantidad de repasos necesarios a largo plazo en comparación con algoritmos más simples como el SM-2 (usado por Anki), permitiéndote aprender más material en el mismo tiempo.</p>
+                    <div class="chart-container">
+                        <canvas id="algorithmEfficiencyChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section id="best-practices" class="mb-16">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-2 text-gray-800">Crea Flashcards que tu Cerebro Amará</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">La calidad de tus flashcards es tan importante como el algoritmo. Sigue estas reglas para maximizar tu aprendizaje.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                     <div>
+                        <div class="chart-container h-80 md:h-96">
+                            <canvas id="flashcardAnatomyChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-gray-500 mt-2">Distribución ideal de elementos en una flashcard efectiva.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-2xl mr-4" style="color: #FF4E50;">❶</span>
+                                <div>
+                                    <h4 class="font-bold">Una Sola Idea por Tarjeta</h4>
+                                    <p class="text-gray-600">No intentes memorizar "gato, perro, pájaro" en una sola tarjeta. Crea una para cada uno. Manténlo simple y atómico.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-2xl mr-4" style="color: #FC913A;">❷</span>
+                                <div>
+                                    <h4 class="font-bold">Añade Contexto</h4>
+                                    <p class="text-gray-600">En lugar de solo "maison = casa", usa una frase: "J'habite dans une grande <span class='font-bold'>maison</span>" (Vivo en una casa grande). El contexto crea conexiones más fuertes.</p>
+                                </div>
+                            </li>
+                             <li class="flex items-start">
+                                <span class="text-2xl mr-4" style="color: #F9D423;">❸</span>
+                                <div>
+                                    <h4 class="font-bold">Usa Imágenes</h4>
+                                    <p class="text-gray-600">Nuestro cerebro procesa imágenes 60,000 veces más rápido que el texto. Añadir una foto de una casa a tu tarjeta de "maison" la hará mucho más memorable.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="results" class="mb-16">
+                 <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-2 text-gray-800">Los Resultados: Aprende Más en Menos Tiempo</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">La aplicación consistente de SRS transforma tus sesiones de estudio.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="kpi-card">
+                        <div class="text-5xl font-black" style="color: #FF4E50;">90%+</div>
+                        <h3 class="text-xl font-semibold mt-2 text-gray-800">Retención a Largo Plazo</h3>
+                        <p class="text-gray-600 mt-1">Mantén el vocabulario y la gramática en tu memoria activa, no solo para el examen.</p>
+                    </div>
+                     <div class="kpi-card" style="border-left-color: #FC913A;">
+                        <div class="text-5xl font-black" style="color: #FC913A;">2x-3x</div>
+                        <h3 class="text-xl font-semibold mt-2 text-gray-800">Mayor Eficiencia</h3>
+                        <p class="text-gray-600 mt-1">Los algoritmos avanzados pueden duplicar o triplicar la eficiencia de tu estudio en comparación con métodos tradicionales.</p>
+                    </div>
+                     <div class="kpi-card" style="border-left-color: #F9D423;">
+                        <div class="text-5xl font-black" style="color: #F9D423;">-80%</div>
+                        <h3 class="text-xl font-semibold mt-2 text-gray-800">Menos Estrés</h3>
+                        <p class="text-gray-600 mt-1">Elimina la necesidad de "empollar" antes de un examen. Confía en el proceso y mantén la calma.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="text-center my-12 p-6 bg-white rounded-lg shadow-md">
+                <p class="text-xl font-bold text-gray-800">Si deseas aprender español o francés conmigo haz click <a href="https://www.instagram.com/idiomaswebespanol/" class="text-orange-500 hover:text-orange-600 underline transition-colors duration-200" target="_blank" rel="noopener noreferrer">aquí</a>.</p>
+            </div>
+
+        </main>
+        
+        <footer class="text-center mt-12 pt-8 border-t border-gray-200">
+            <p class="text-gray-600">Empieza tu viaje de aprendizaje hoy. La consistencia es tu única tarea.</p>
+            <div class="flex justify-center mt-4">
+                <a href="https://wa.me/553299092071" target="_blank" class="bg-green-500 text-white font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:bg-green-600 transition-colors duration-300 flex items-center gap-2">
+                    <span class="text-2xl">&#x1F4F1;</span>
+                    WhatsApp
+                </a>
+            </div>
+            <p class="text-sm text-gray-400 mt-4">Infografía creada con Chart.js y Tailwind CSS. No se utilizaron SVG ni Mermaid JS.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function wrapLabel(str, maxWidth) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const sharedChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#4B5563',
+                        font: {
+                            family: "'Inter', sans-serif"
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    backgroundColor: '#1F2937',
+                    titleFont: { size: 14, weight: 'bold' },
+                    bodyFont: { size: 12 },
+                    padding: 10,
+                    cornerRadius: 4
+                }
+            },
+            scales: {
+                y: {
+                    ticks: { 
+                        color: '#4B5563',
+                        font: { family: "'Inter', sans-serif" }
+                    },
+                    grid: { color: '#E5E7EB' }
+                },
+                x: {
+                    ticks: { 
+                        color: '#4B5563', 
+                        font: { family: "'Inter', sans-serif" }
+                    },
+                    grid: { display: false }
+                }
+            }
+        };
+
+        const palette = {
+            red: '#FF4E50',
+            orange: '#FC913A',
+            yellow: '#F9D423',
+            lightGreen: '#EDE574',
+            lighterGreen: '#E1F5C4',
+            gray: '#6B7280'
+        };
+
+        new Chart(document.getElementById('forgettingCurveChart'), {
+            type: 'line',
+            data: {
+                labels: ['Día 1', 'Día 2', 'Día 7', 'Día 30', 'Día 60'],
+                datasets: [{
+                    label: 'Sin Repaso',
+                    data: [100, 50, 25, 10, 5],
+                    borderColor: palette.gray,
+                    backgroundColor: 'rgba(107, 114, 128, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }, {
+                    label: 'Con Repetición Espaciada',
+                    data: [100, 95, 92, 90, 88],
+                    borderColor: palette.red,
+                    backgroundColor: 'rgba(255, 78, 80, 0.2)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                ...sharedChartOptions,
+                scales: {
+                    y: { ...sharedChartOptions.scales.y, min: 0, max: 100, ticks: { ...sharedChartOptions.scales.y.ticks, callback: value => value + '%' } },
+                    x: { ...sharedChartOptions.scales.x }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('algorithmEfficiencyChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Estudio Tradicional', 'SRS Básico (ej. Anki SM-2)', 'SRS Avanzado (ej. SuperMemo SM-18)'],
+                datasets: [{
+                    label: 'Carga de Repasos Estimada (a largo plazo)',
+                    data: [100, 45, 25],
+                    backgroundColor: [palette.gray, palette.orange, palette.red],
+                    borderColor: 'white',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                ...sharedChartOptions,
+                plugins: { ...sharedChartOptions.plugins, legend: { display: false } },
+                scales: {
+                    y: { ...sharedChartOptions.scales.y, ticks: { ...sharedChartOptions.scales.y.ticks, callback: value => value + '%' } },
+                    x: { ...sharedChartOptions.scales.x, ticks: { ...sharedChartOptions.scales.x.ticks, callback: function(value) { return wrapLabel(this.getLabelForValue(value), 15) } } }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('flashcardAnatomyChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Concepto Único y Claro', 'Frase de Contexto', 'Imagen Relevante', 'Pregunta Directa'],
+                datasets: [{
+                    label: 'Componentes de una Flashcard Ideal',
+                    data: [40, 30, 20, 10],
+                    backgroundColor: [palette.red, palette.orange, palette.yellow, palette.lightGreen],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#4B5563',
+                            font: { family: "'Inter', sans-serif" },
+                            padding: 20
+                        }
+                    },
+                    tooltip: {
+                        ...sharedChartOptions.plugins.tooltip,
+                        callbacks: {
+                            ...sharedChartOptions.plugins.tooltip.callbacks,
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    label += context.parsed + '%';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
 
